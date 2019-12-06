@@ -1,0 +1,410 @@
+//VARIABLES
+
+//colors
+$medium-blue: #4A7A8C;
+$light-blue: #ADC8D9;
+$dark-blue: #0E4C59;
+$white: #fff;
+
+//fonts
+$heading: 'Gabriela', serif;
+$text: 'Amaranth', sans-serif;
+
+//MINXINS
+@mixin row1{
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+@mixin row2{
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Amaranth|Gabriela&display=swap");
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+// body{
+//   background: url(mediumpine.jpg);
+// }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading; }
+
+p, a {
+  font-family: $text; }
+
+a {
+  color:$light-blue;
+  text-decoration: none;}
+
+    a:visited {
+    color: $medium-blue; }
+
+    a:hover {
+      color: $white;
+      font-size: 1.1em; }
+
+    a:active {
+        text-decoration: underline;}
+
+
+.page-wrapper {
+  /*
+      background:url(daylightfit.jpg) center;
+      background-attachment: fixed;
+  */
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-auto-columns: minmax(20px, auto);
+  grid-auto-rows: minmax(20px, auto);
+  /*    grid-row-gap: 20px;*/ }
+
+.intro header {
+  background: url(daylightfit.jpg) center;
+  background-size: cover;
+  @include row1;
+  padding: 2em;
+  display: grid;
+  grid-auto-rows: fit-content(100%);
+  margin-bottom: 10px; }
+
+.intro header h1 {
+  font-size: 2em;
+  text-align: right;
+  margin: 0;
+  color: $white;
+  @include row2; }
+
+.intro header h1::before {
+        display: inline-block;
+        content: url(biggerheartwhite.svg);
+        height: 50px;
+        width: 50px;
+  }
+
+  .intro header h1::after {
+          display: inline-block;
+          content: url(biggerheartwhite.svg);
+          height: 50px;
+          width: 50px;
+    }
+
+
+header h2 {
+  color: $white;
+  font-size: .85em;
+  text-align: right;
+  text-shadow: 2px 2px 3px $medium-blue;
+  margin-bottom: 0;
+  margin-right: .4rem;
+  @include row1; }
+
+.preamble {
+  @include row2;
+  padding: .75rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color:$light-blue;
+  margin-top: .75rem;
+  color: $dark-blue;
+
+     h3,  p {
+      text-align: left;
+      margin: .5rem; }
+    }
+
+.summary {
+  background-color: $medium-blue;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: grid;
+  grid-auto-rows: minmax(20px, auto);
+  grid-gap: 10px;
+  padding-left: 15px;
+  /*    background-color: $white6;*/
+
+     p:nth-child(2) {
+      @include row1;
+      font-style: italic;
+      font-size: .8rem;
+      text-align: right;
+      padding-right: 15px; }
+
+     p:first-child {
+      margin-top: -15px;
+      padding-right: 15px;}
+  }
+
+aside {
+  @include row2;
+
+    a {
+      color:$light-blue; }
+  }
+
+a{
+  color: $dark-blue;
+}
+
+.select, .archives, .resources {
+  text-align: center;
+  background:$dark-blue;
+  color: $white; }
+  .select::before, .archives::before, .resources::before{
+      content:url(mediumpine.jpg);}
+    .design-selection, .design-archives, .zen-resources {
+      background: $medium-blue; }
+
+    .design-selection nav, .design-archives nav, .zen-resources ul {
+      display: none;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
+
+    .select:hover, .resources:hover, .archives:hover {
+      opacity: .75;
+      cursor: pointer; }
+
+    .design-selection:hover nav, .design-archives:hover nav, .zen-resources:hover ul {
+      display: block;
+      z-index: 1; }
+
+    .design-selection nav a:hover, .design-archives nav a:hover, .zen-resources ul li a:hover {
+      color: $white; }
+
+.explanation {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color:$light-blue;
+  color: $dark-blue;
+  padding: .75rem;
+  margin-bottom: 10px; }
+
+
+.participation {
+  background-color: $dark-blue;
+  color: $light-blue;
+  padding: .75rem;
+  margin-bottom: 10px;}
+
+.benefits {
+  border: 1px solid$light-blue;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color:$light-blue;
+  color: $dark-blue;
+  padding: .75rem;
+  margin-bottom: 10px; }
+
+.requirements {
+  padding: .75rem;
+  color: $light-blue;
+  background-color: $dark-blue;
+  /*    background-color: rgba(250,250,250,0.4);
+     text-shadow: 2px 2px 2px $lightblue;
+  */
+  margin-bottom: 10px;}
+
+ .preamble h3::before, .participation h3::before, .benefits h3::before, .requirements h3::before, .explanation h3::before{
+      content:url(mediumpine.jpg);
+    float:left;
+  }
+
+footer {
+  background-color:$light-blue;
+  text-align: center;
+ ::before{
+    content:url(smallpine.jpg);
+    }
+   a {
+    color: $white;
+    padding: .4rem; }
+  }
+
+/************ Large screen****************/
+@media screen and (min-width: 961px) {
+  /* basic elements */
+  body {
+    line-height: 1.5em;
+    background-color: $medium-blue;
+    margin: 0;
+    padding: 0; }
+
+  .page-wrapper {
+//    display: block;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 25% 74% 2em;
+      grid-row-gap: 10px;
+   }
+
+  h3 {
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    color: black; }
+
+  .intro {
+      grid-column: 1 / 3;
+      @include row1;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 1fr 1fr; }
+
+  .intro header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 2.5em; }
+
+    .intro header h1 {
+        text-align: center;
+        font-size: 3em; }
+
+    .intro header h2 {
+        text-align: center; }
+
+  .intro .summary {
+    color: $medium-blue;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    @include row2;
+    grid-template-rows: 35% 5% 60%;
+    min-width: 235px;
+    padding: .25rem;
+    margin-top: 25px;
+    margin-right: 10px; }
+
+      .intro .summary p:nth-child(2) {
+        background-color:$light-blue;
+        @include row1;
+        font-style: italic;
+        font-size: .9rem;
+        text-align: center;
+        margin-top: 0;
+        padding: 10px; }
+
+      .intro .summary p:nth-child(2)::before {
+        content: url(smallpine.jpg) "Downloads";
+        display: block;
+        font-family:$heading;
+        font-size: 14px;
+        color: $white;
+        background:$dark-blue;
+        text-align: center;
+        margin-left: -10px;
+        margin-top: -10px;
+        width: calc(100% + 20px); }
+
+      .intro .summary p:first-child {
+        grid-row-start: 3;
+        grid-row-end: 4;
+        background-color:$light-blue;
+        font-size: 16px;
+        text-align: center;
+        padding: 10px; }
+
+     .intro .summary p:nth-child(1)::before {
+       content: url(smallpine.jpg) "Examples";
+       display: block;
+       font-family: $heading;
+       font-style: italic;
+       font-size: 1.1em;
+       color: $white;
+       background:$dark-blue;
+       text-align: center;
+       margin-top: -10px;
+       margin-left: -10px;
+       width: calc(100% + 20px); }
+
+  .main {
+      grid-column: 1 / 2;
+      grid-row: 2/4;
+    }
+
+  aside {
+      grid-column: 2 / 3;
+      grid-row: 2/3;
+       overflow: hidden;
+    padding-right: 10px;
+
+       a {
+        color: $medium-blue; }
+  }
+
+  .design-selection nav, .design-archives nav, .zen-resources ul {
+    display: block;
+    background-color:$light-blue;
+    color: $medium-blue; }
+
+        .design-selection h3 {
+          margin-top: 30px; }
+
+        .design-selection nav {
+          margin-top: -15px; }
+
+        .design-archives h3 {
+          margin-top: 30px; }
+
+        .design-archives nav {
+          margin-top: -15px; }
+
+        .zen-resources h3 {
+          margin-top: 35px; }
+
+        .zen-resources ul {
+          margin-top: -1px; }
+
+
+  .zen-resources::after {
+      content:"";
+      background-image: url(crop.jpg);
+      background-size:contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 440px;
+      display: inline-grid;
+
+    }
+  .select:hover, .resources:hover, .archives:hover {
+    opacity: 1;
+    cursor: default; }
+
+  .preamble h3, .preamble p {
+    text-align: left;
+    margin: .5rem; }
+
+  .participation h3, .benefits h3, .requirements h3 {
+    margin-top: 0; }
+
+  .preamble, .participation, .benefits, .requirements {
+    background-color:$light-blue;
+    color: $medium-blue;
+    margin-top: 25px;
+    margin-right: 50px;
+    padding: .25rem .75rem;
+    margin-left: 10px; }
+
+  .explanation {
+    background-color:$light-blue;
+    color: $medium-blue;
+    margin-right: 50px;
+    margin-top: 30px;
+    padding: .75rem;
+    margin-left: 10px;
+
+      h3 {
+        margin-top: 0; }
+}
+
+footer {
+  margin-left: 0;
+  padding: 0px 20px 10px 20px;
+  width: 100vw;
+  margin-top: 15px;
+
+    a:link, a:visited {
+      margin-right: 20px; }
+}
+   }
